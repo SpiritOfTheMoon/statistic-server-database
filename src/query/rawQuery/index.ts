@@ -8,3 +8,4 @@ export * from "./findResultTypeByIntervalsFromPeriod";
 export * from "./findStatisticByQueryByInterval";
 export * from "./rawTestQuery";
 export * from "./resultTypeReportDb";
+export * from "./findStatisticDataByIdQuery";
