@@ -1,5 +1,5 @@
 {
-  "name": "@umk/statistic-server-database",
+  "name": "@umk-stat/statistic-server-database",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
