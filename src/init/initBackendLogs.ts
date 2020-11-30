@@ -32,10 +32,6 @@ export function initBackendLogs(
             allowNull: false,
             type: DataTypes.TEXT,
         },
-        result: {
-            allowNull: false,
-            type: DataTypes.TEXT,
-        },
         resultType: {
             allowNull: false,
             type: DataTypes.STRING,

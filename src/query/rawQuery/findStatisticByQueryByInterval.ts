@@ -54,7 +54,6 @@ export function findStatisticByQueryByInterval(sequelize: Sequelize): (
                                   ,[login]
                                   ,[perfomance]
                                   ,[query]
-                                  ,[result]
                                   ,[resultType]
                                   ,[systemId]
                                   ,[createdAt]

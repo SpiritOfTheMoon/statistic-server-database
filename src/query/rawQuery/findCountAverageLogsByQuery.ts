@@ -22,7 +22,6 @@ export function findCountAverageLogsByQuery(sequelize: Sequelize): (
                   ,[login]
                   ,[perfomance]
                   ,[query]
-                  ,[result]
                   ,[resultType]
                   ,[systemId]
                   ,[createdAt]

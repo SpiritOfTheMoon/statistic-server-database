@@ -35,7 +35,6 @@ export function findAllLogsByQuery(sequelize: Sequelize): (
                   ,[login]
                   ,[perfomance]
                   ,[query]
-                  ,[result]
                   ,[resultType]
                   ,[systemId]
                   ,[createdAt]

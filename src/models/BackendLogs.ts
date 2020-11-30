@@ -6,7 +6,6 @@ export type BackendLogsAttributesType = {
     date: Date;
     perfomance: number;
     login: string;
-    result: string;
     resultType: string;
     systemId: string;
     args?: string | null;
