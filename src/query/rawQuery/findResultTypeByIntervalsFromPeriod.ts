@@ -75,6 +75,7 @@ export function findResultTypeByIntervalsFromPeriod(
                         where [systemId] = [System].id
                             and [BackendLogs].date >=  [DateParts].[DatePart]
                             and [BackendLogs].date <=  [DateParts].[nextDatePart]
+                            and [BackendLogs].systemId = [System].id
 
                         group by resultType
 

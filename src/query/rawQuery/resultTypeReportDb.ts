@@ -26,12 +26,13 @@ export function resultTypeReportDb(sequelize: Sequelize):
             SELECT COUNT(*) as countResultType
             , resultType
             FROM [Statistic_UMK].[dbo].[BackendLogs]
-            where ${systemIdOption}
-                and [BackendLogs].date >=  '${fromDate.toISOString()}'
+            where [BackendLogs].date >=  '${fromDate.toISOString()}'
                 and [BackendLogs].date <= '${toDate.toISOString()}'
+                and [BackendLogs].systemId = [System].id
             group by resultType
 
         ) L
+        where ${systemIdOption}
         `;
         const ans: ResultTypeReportDbType[] = await sequelize.query<ResultTypeReportDbType>(query, {
             type: QueryTypes.SELECT,

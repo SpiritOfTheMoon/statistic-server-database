@@ -77,6 +77,7 @@ export function findQueryAverageByIntervalsFromPeriod(
                                 from [BackendLogs]
                                 where [BackendLogs].date <= [DateParts].nextDatePart
                                 and [BackendLogs].date >= [DateParts].DatePart
+                                and [BackendLogs].systemId = [System].id
                                 group by [BackendLogs].query
             
                             ) Query
