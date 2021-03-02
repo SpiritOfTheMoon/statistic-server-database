@@ -6,3 +6,4 @@ export * from "./initEvent";
 export * from "./initTarget";
 export * from "./initViewer";
 export * from "./initViewerTargetTargets";
+export * from "./initSystemTargetTargets";

@@ -1,7 +1,13 @@
 import { ViewerTargetTargets } from "../../../models";
 
-export async function findViewerTargetTargets(): Promise<ViewerTargetTargets[]> {
+export async function findViewerTargetTargets(
+    id: string,
+): Promise<ViewerTargetTargets | null> {
 
-    return await ViewerTargetTargets.findAll();
+    return await ViewerTargetTargets.findOne({
+        where: {
+            id,
+        },
+    });
 
 }
