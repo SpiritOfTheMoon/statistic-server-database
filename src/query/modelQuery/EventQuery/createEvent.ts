@@ -1,4 +1,4 @@
-import { Event, EventCreationAttributesType } from "../../../models";
+import {Event, EventCreationAttributesType} from "../../../models";
 
 export async function createEvent(
 
@@ -7,9 +7,8 @@ export async function createEvent(
 ): Promise<Event> {
 
     try {
-        
-        const event = await Event.create(value);
-        return event;
+
+        return await Event.create(value);
     
     } catch (error) {
 

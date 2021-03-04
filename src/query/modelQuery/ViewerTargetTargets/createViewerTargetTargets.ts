@@ -1,4 +1,4 @@
-import { ViewerTargetTargets, ViewerTargetTargetsCreationAttributesType } from "../../../models";
+import {ViewerTargetTargets, ViewerTargetTargetsCreationAttributesType} from "../../../models";
 
 export async function createViewerTargetTargets(
 
@@ -7,9 +7,8 @@ export async function createViewerTargetTargets(
 ): Promise<ViewerTargetTargets> {
 
     try {
-        
-        const viewerTargetTargets = await ViewerTargetTargets.create(value);
-        return viewerTargetTargets;
+
+        return await ViewerTargetTargets.create(value);
     
     } catch (error) {
 

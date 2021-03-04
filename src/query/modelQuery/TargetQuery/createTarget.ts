@@ -1,4 +1,4 @@
-import { Target, TargetCreationAttributesType } from "../../../models";
+import {Target, TargetCreationAttributesType} from "../../../models";
 
 export async function createTarget(
 
@@ -7,9 +7,8 @@ export async function createTarget(
 ): Promise<Target> {
 
     try {
-        
-        const target = await Target.create(value);
-        return target;
+
+        return await Target.create(value);
     
     } catch (error) {
 

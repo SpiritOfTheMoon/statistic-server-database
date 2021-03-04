@@ -3,17 +3,20 @@ import { SystemTargetTargets } from "../../../models";
 
 export async function updateSTTTargetID(
     id: string, updateTargetID: string
-): Promise<void> {
+): Promise<SystemTargetTargets | null> {
 
+    const options = {
+        where: {
+            id,
+        },
+    }
     try {
 
         await SystemTargetTargets.update({
             targetID: updateTargetID,
-        }, {
-            where: {
-                id,
-            },
-        });
+        }, options);
+
+        return await SystemTargetTargets.findOne(options);
 
     } catch (error) {
 
@@ -26,17 +29,20 @@ export async function updateSTTTargetID(
 
 export async function updateSTTSystemID(
     id: string, updateSystemID: string
-): Promise<void> {
+): Promise<SystemTargetTargets | null> {
 
+    const options = {
+        where: {
+            id,
+        },
+    }
     try {
 
         await SystemTargetTargets.update({
             systemID: updateSystemID,
-        }, {
-            where: {
-                id,
-            },
-        });
+        }, options);
+
+        return await SystemTargetTargets.findOne(options);
 
     } catch (error) {
 
@@ -44,5 +50,4 @@ export async function updateSTTSystemID(
         throw error;
 
     }
-
 }

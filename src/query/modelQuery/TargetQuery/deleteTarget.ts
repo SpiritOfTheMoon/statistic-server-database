@@ -2,12 +2,25 @@ import { Target } from "../../../models";
 
 export async function deleteTarget(
     id: string,
-): Promise<number | null> {
+): Promise<Target | null> {
 
-    return await Target.destroy({
+    const option = {
         where: {
             id,
         },
-    });
+    }
+    
+    const deletedTarget = await Target.findOne(option);
+    try {
+
+        await Target.destroy(option);
+        return deletedTarget;
+    
+    } catch (error) {
+
+        console.error(error);
+        throw error;
+    
+    }
 
 }

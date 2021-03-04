@@ -1,7 +1,22 @@
 import { Target } from "../../../models";
 
-export async function deleteTargets(): Promise<number | null> {
+export async function deleteTargets(): Promise<Target[]> {
 
-    return await Target.destroy();
+    const deletedTargets = await Target.findAll();
+    try {
+
+        await Target.destroy({
+            where: {
+
+            },
+        });
+        return deletedTargets;
+
+    } catch (error) {
+
+        console.error(error);
+        throw error;
+
+    }
 
 }

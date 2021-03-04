@@ -3,17 +3,20 @@ import { ViewerTargetTargets } from "../../../models";
 
 export async function updateVTTTargetID(
     id: string, updateTargetID: string
-): Promise<void> {
+): Promise<ViewerTargetTargets | null> {
 
+    const options = {
+        where: {
+            id,
+        },
+    }
     try {
 
         await ViewerTargetTargets.update({
             targetID: updateTargetID,
-        }, {
-            where: {
-                id,
-            },
-        });
+        }, options);
+
+        return await ViewerTargetTargets.findOne(options);
 
     } catch (error) {
 
@@ -26,17 +29,20 @@ export async function updateVTTTargetID(
 
 export async function updateVTTViewerID(
     id: string, updateViewerID: string
-): Promise<void> {
+): Promise<ViewerTargetTargets | null> {
 
+    const options = {
+        where: {
+            id,
+        },
+    }
     try {
 
         await ViewerTargetTargets.update({
             viewerID: updateViewerID,
-        }, {
-            where: {
-                id,
-            },
-        });
+        }, options);
+
+        return await ViewerTargetTargets.findOne(options);
 
     } catch (error) {
 

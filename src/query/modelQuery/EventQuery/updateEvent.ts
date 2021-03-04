@@ -2,40 +2,46 @@ import { Event } from "../../../models";
 
 export async function updateEventName(
     id: string, updateName: string
-): Promise<void> {
-    
+): Promise<Event | null> {
+
+    const options = {
+        where: {
+            id,
+        },
+    }
     try {
 
         await Event.update({
             name: updateName,
-        }, {
-            where: {
-                id, 
-            },
-        });
-        
+        }, options);
+
+        return await Event.findOne(options);
+
     } catch (error) {
 
         console.error(error);
         throw error;
-    
+
     }
 
 }
 
 export async function updateEventTargetID(
     id: string, updateTargetID: string
-): Promise<void> {
+): Promise<Event | null> {
 
+    const options = {
+        where: {
+            id,
+        },
+    }
     try {
 
         await Event.update({
             targetID: updateTargetID,
-        }, {
-            where: {
-                id,
-            },
-        });
+        }, options);
+
+        return await Event.findOne(options);
 
     } catch (error) {
 

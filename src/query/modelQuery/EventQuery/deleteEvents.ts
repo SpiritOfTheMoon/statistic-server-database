@@ -1,7 +1,21 @@
 import { Event } from "../../../models";
 
-export async function deleteEvents(): Promise<number | null> {
+export async function deleteEvents(): Promise<Event[]> {
 
-    return await Event.destroy();
+    const deletedEvents = await Event.findAll();
+    try {
 
+        await Event.destroy({
+            where: {
+
+            },
+        });
+        return deletedEvents;
+
+    } catch (error) {
+
+        console.error(error);
+        throw error;
+
+    }
 }

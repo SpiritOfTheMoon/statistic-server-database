@@ -1,7 +1,21 @@
 import { Viewer } from "../../../models";
 
-export async function deleteViewers(): Promise<number | null> {
+export async function deleteViewers(): Promise<Viewer[]> {
 
-    return await Viewer.destroy();
+    const deletedViewers = await Viewer.findAll();
+    try {
 
+        await Viewer.destroy({
+            where: {
+
+            },
+        });
+        return deletedViewers;
+
+    } catch (error) {
+
+        console.error(error);
+        throw error;
+
+    }
 }

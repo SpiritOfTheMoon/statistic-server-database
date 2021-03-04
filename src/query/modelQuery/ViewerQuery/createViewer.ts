@@ -1,4 +1,4 @@
-import { Viewer, ViewerCreationAttributesType } from "../../../models";
+import {Viewer, ViewerCreationAttributesType} from "../../../models";
 
 export async function createViewer(
 
@@ -7,9 +7,8 @@ export async function createViewer(
 ): Promise<Viewer> {
 
     try {
-        
-        const viewer = await Viewer.create(value);
-        return viewer;
+
+        return await Viewer.create(value);
     
     } catch (error) {
 

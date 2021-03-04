@@ -1,4 +1,4 @@
-import { SystemTargetTargets, SystemTargetTargetsCreationAttributesType } from "../../../models";
+import {SystemTargetTargets, SystemTargetTargetsCreationAttributesType} from "../../../models";
 
 export async function createSystemTargetTargets(
 
@@ -7,9 +7,8 @@ export async function createSystemTargetTargets(
 ): Promise<SystemTargetTargets> {
 
     try {
-        
-        const systemTargetTargets = await SystemTargetTargets.create(value);
-        return systemTargetTargets;
+
+        return await SystemTargetTargets.create(value);
     
     } catch (error) {
 
