@@ -1,7 +1,11 @@
 import { Event } from "../../../models";
 
-export async function updateEventName(
-    id: string, updateName: string
+export async function updateEvent(
+    id: string,
+    name?: string,
+    targetID?: string,
+    viewerID?: string,
+    time?: Date
 ): Promise<Event | null> {
 
     const options = {
@@ -12,7 +16,10 @@ export async function updateEventName(
     try {
 
         await Event.update({
-            name: updateName,
+            name,
+            targetID,
+            viewerID,
+            time,
         }, options);
 
         return await Event.findOne(options);
@@ -26,28 +33,4 @@ export async function updateEventName(
 
 }
 
-export async function updateEventTargetID(
-    id: string, updateTargetID: string
-): Promise<Event | null> {
 
-    const options = {
-        where: {
-            id,
-        },
-    }
-    try {
-
-        await Event.update({
-            targetID: updateTargetID,
-        }, options);
-
-        return await Event.findOne(options);
-
-    } catch (error) {
-
-        console.error(error);
-        throw error;
-
-    }
-
-}

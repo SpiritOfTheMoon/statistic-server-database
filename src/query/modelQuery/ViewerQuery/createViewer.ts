@@ -1,8 +1,8 @@
-import {Viewer, ViewerCreationAttributesType} from "../../../models";
+import { Viewer, ViewerCreationAttributes } from "../../../models";
 
 export async function createViewer(
 
-    value: ViewerCreationAttributesType,
+    value: ViewerCreationAttributes,
 
 ): Promise<Viewer> {
 

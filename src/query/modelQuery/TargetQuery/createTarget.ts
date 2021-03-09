@@ -1,8 +1,8 @@
-import {Target, TargetCreationAttributesType} from "../../../models";
+import { Target, TargetCreationAttributes } from "../../../models";
 
 export async function createTarget(
 
-    value: TargetCreationAttributesType,
+    value: TargetCreationAttributes,
 
 ): Promise<Target> {
 

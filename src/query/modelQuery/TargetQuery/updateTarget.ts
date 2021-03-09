@@ -1,7 +1,9 @@
 import { Target } from "../../../models";
 
-export async function updateTargetName(
-    id: string, updateName: string
+export async function updateTarget(
+    id: string,
+    name?: string,
+    systemID?: string,
 ): Promise<Target | null> {
 
     const options = {
@@ -12,7 +14,8 @@ export async function updateTargetName(
     try {
 
         await Target.update({
-            name: updateName,
+            name,
+            systemID,
         }, options);
         
         return await Target.findOne(options);

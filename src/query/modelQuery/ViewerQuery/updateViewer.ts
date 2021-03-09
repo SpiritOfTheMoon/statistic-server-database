@@ -1,7 +1,10 @@
 import { Viewer } from "../../../models";
 
-export async function updateViewerIdentifier(
-    id: string, updateIdentifier: string
+export async function updateViewer(
+    id: string,
+    identifier?: string,
+    userInfo?: string,
+    compInfo?: string,
 ): Promise<Viewer | null> {
 
     const options = {
@@ -12,7 +15,9 @@ export async function updateViewerIdentifier(
     try {
 
         await Viewer.update({
-            identifier: updateIdentifier,
+            identifier,
+            userInfo,
+            compInfo,
         }, options);
 
         return await Viewer.findOne(options);
